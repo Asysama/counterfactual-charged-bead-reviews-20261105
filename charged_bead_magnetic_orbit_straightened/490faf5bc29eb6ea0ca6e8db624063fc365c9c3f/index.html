@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>charged_bead_magnetic_orbit_straightened</title><style>body{font:16px/1.65 system-ui,-apple-system,sans-serif;color:#173045;background:#f3f5f7;margin:0}
+main{max-width:1180px;margin:auto;padding:26px}h1{font-size:26px;overflow-wrap:anywhere}h2{margin-top:34px}
+a{color:#0757b4}code{overflow-wrap:anywhere}section,article{background:#fff;border:1px solid #d6dde4;padding:18px;border-radius:12px;margin:18px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.vid{margin:0;min-width:0}video{width:100%;aspect-ratio:1;background:#000}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #ccd5df;padding:7px;text-align:left}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f4;padding:12px;border-radius:8px}
+.small{color:#5a6b7b;font-size:13px}.pill{display:inline-block;background:#e7f0ff;border-radius:999px;padding:2px 10px;margin:2px;font-size:13px}</style><main><h1>charged_bead_magnetic_orbit_straightened</h1>
+<p><span class="pill">generator charged_bead_magnetic_orbit_straightened</span><span class="pill">head 490faf5bc29eb6ea0ca6e8db624063fc365c9c3f</span>
+<span class="pill">native 2048x2048 · 24 fps · 120 frames · 5 s · H.264</span><span class="pill">violating-object-only mask</span></p>
+<p><strong>Pull request</strong>: <a href="https://github.com/hipo-dev/counterfactual-data/pull/830">https://github.com/hipo-dev/counterfactual-data/pull/830</a> · <strong>commit</strong>: <code>490faf5bc29eb6ea0ca6e8db624063fc365c9c3f</code></p>
+<p><strong>Operator</strong>: <code>magnetic_field_force_removed</code> · <strong>scene params</strong>:
+<pre>{
+ &quot;appearance&quot;: 0,
+ &quot;approach_distance&quot;: 0.021596686880624855,
+ &quot;approach_time&quot;: 0.266667,
+ &quot;bead_charge&quot;: 1.2,
+ &quot;bead_mass&quot;: 0.06,
+ &quot;bead_radius&quot;: 0.023081514073999998,
+ &quot;bead_ratio&quot;: 0.126667,
+ &quot;camera_azimuth_degrees&quot;: -34.0,
+ &quot;camera_elevation_ratio&quot;: 0.78,
+ &quot;curvature_radius&quot;: 0.182222,
+ &quot;entry_speed&quot;: 0.080987474568,
+ &quot;entry_time&quot;: 0.266667,
+ &quot;field_strength&quot;: 0.0222222,
+ &quot;gravity&quot;: 9.81,
+ &quot;intervention_frame&quot;: 7,
+ &quot;magnet_length&quot;: 0.360394662716,
+ &quot;magnet_length_ratio&quot;: 1.977778,
+ &quot;magnet_width&quot;: 0.38874020592599995,
+ &quot;magnet_width_ratio&quot;: 2.133333,
+ &quot;model&quot;: &quot;Analytic charged-particle model, authored per frame.  The scene is a horizontal table with a large flat magnet set flush into it; the magnet&#x27;s upper face is its north pole, so the field above that face is modelled as uniform and vertical over the magnet&#x27;s footprint.  The ball slides without friction, so it is a point charge of mass m and charge q moving at constant speed v0.  Outside the magnet&#x27;s footprint nothing acts on it.  Inside, the magnetic force q v x B is perpendicular to the velocity, so the speed is unchanged and the path is a circle of radius R = m v0 / (q B) whose centre lies a distance R to the side of the entry point; the ball leaves the footprint through its far edge, through its long side, or by turning back through the near edge, whichever it reaches first, and then continues in a straight line.  The factual branch uses the full force.  The counterfactual branch drops the magnetic force term, so the ball travels in a straight line the whole way and the two branches are identical until the ball reaches the magnet&#x27;s near edge.  The field is an idealisation of the region above a large pole face; the generator claims the Lorentz-force law - a force perpendicular to the velocity, an unchanged speed, and a circular arc of radius m v / (q B) - and not a calibrated magnet layout or a solver result.&quot;,
+ &quot;omega&quot;: 0.444444,
+ &quot;solver_steps_per_frame&quot;: 1,
+ &quot;time_scale&quot;: 1.0,
+ &quot;turn_angle&quot;: 1.6375123081668466,
+ &quot;turn_rate&quot;: 0.444444,
+ &quot;view&quot;: 0
+}</pre></p>
+<h2>Rendered cases</h2><section><h3>Case 42</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v42-true" controls playsinline muted preload="metadata"><source src="media/42-true.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v42-counterfactual" controls playsinline muted preload="metadata" poster="poster-42.png"><source src="media/42-counterfactual.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v42-mask" controls playsinline muted preload="metadata"><source src="media/42-mask.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v42-mask_overlay" controls playsinline muted preload="metadata"><source src="media/42-mask_overlay.mp4" type="video/mp4"></video><small>seed 42</small></figure></div>
+<p><strong>True prompt</strong><br>A small orange ball with two white painted spots, carrying a positive charge, slides slowly from the left across a horizontal table and onto the flat red pole face of a large magnet that is set flush into the table. While the ball is over the magnet its path bends into a smooth arc, and the ball leaves the pole face travelling at an angle to the direction it arrived in.</p>
+<p><strong>Counterfactual prompt</strong><br>A small orange ball with two white painted spots, carrying a positive charge, slides slowly from the left across a horizontal table and straight over the flat red pole face of a large magnet that is set flush into the table. The magnet does not turn the ball at all, so the ball keeps the same direction the whole way and leaves the pole face travelling straight ahead.</p>
+<p class="small">decoded audit: first changed frame 7, mask start 7,
+evidence frame 50, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section><section><h3>Case 98</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v98-true" controls playsinline muted preload="metadata"><source src="media/98-true.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v98-counterfactual" controls playsinline muted preload="metadata" poster="poster-98.png"><source src="media/98-counterfactual.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v98-mask" controls playsinline muted preload="metadata"><source src="media/98-mask.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v98-mask_overlay" controls playsinline muted preload="metadata"><source src="media/98-mask_overlay.mp4" type="video/mp4"></video><small>seed 98</small></figure></div>
+<p><strong>True prompt</strong><br>A small orange ball with two white painted spots, carrying a positive charge, slides slowly from the left across a horizontal table and onto the flat red pole face of a large magnet that is set flush into the table. While the ball is over the magnet its path bends into a smooth arc, and the ball leaves the pole face travelling at an angle to the direction it arrived in.</p>
+<p><strong>Counterfactual prompt</strong><br>A small orange ball with two white painted spots, carrying a positive charge, slides slowly from the left across a horizontal table and straight over the flat red pole face of a large magnet that is set flush into the table. The magnet does not turn the ball at all, so the ball keeps the same direction the whole way and leaves the pole face travelling straight ahead.</p>
+<p class="small">decoded audit: first changed frame 12, mask start 12,
+evidence frame 43, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section>
+<h2>Case summary</h2><table><tr><th>seed</th><th>operator</th><th>first changed</th><th>mask start</th><th>evidence</th><th>decoded audit</th><th>output</th></tr><tr><td>42</td><td>magnetic_field_force_removed</td><td>7</td><td>7</td><td>50</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr><tr><td>98</td><td>magnetic_field_force_removed</td><td>12</td><td>12</td><td>43</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr></table>
+<h2>Contract</h2>
+<p>True and Counterfactual are produced by one declared operator applied once at a single intervention frame.
+Every decoded frame before the intervention frame is exactly equal. The mask contains only the visible pixels of the
+violating object and never a shadow. Physical time equals video time; the solver steps per recorded frame and the
+internal time step are recorded in each case metadata.</p></main></html>
