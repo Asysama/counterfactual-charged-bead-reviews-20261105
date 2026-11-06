@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>pendulum_wave_travelling_pattern_lost</title><style>body{font:16px/1.65 system-ui,-apple-system,sans-serif;color:#173045;background:#f3f5f7;margin:0}
+main{max-width:1180px;margin:auto;padding:26px}h1{font-size:26px;overflow-wrap:anywhere}h2{margin-top:34px}
+a{color:#0757b4}code{overflow-wrap:anywhere}section,article{background:#fff;border:1px solid #d6dde4;padding:18px;border-radius:12px;margin:18px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.vid{margin:0;min-width:0}video{width:100%;aspect-ratio:1;background:#000}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #ccd5df;padding:7px;text-align:left}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f4;padding:12px;border-radius:8px}
+.small{color:#5a6b7b;font-size:13px}.pill{display:inline-block;background:#e7f0ff;border-radius:999px;padding:2px 10px;margin:2px;font-size:13px}</style><main><h1>pendulum_wave_travelling_pattern_lost</h1>
+<p><span class="pill">generator pendulum_wave_travelling_pattern_lost</span><span class="pill">head ec9cb9a3e4fe8d173a2199f36b5fbbecc36e459b</span>
+<span class="pill">native 2048x2048 · 24 fps · 120 frames · 5 s · H.264</span><span class="pill">violating-object-only mask</span></p>
+<p><strong>Pull request</strong>: <a href="https://github.com/hipo-dev/counterfactual-data/pull/839">https://github.com/hipo-dev/counterfactual-data/pull/839</a> · <strong>commit</strong>: <code>ec9cb9a3e4fe8d173a2199f36b5fbbecc36e459b</code></p>
+<p><strong>Operator</strong>: <code>length_period_relation_flattened</code> · <strong>scene params</strong>:
+<pre>{
+ &quot;appearance&quot;: 0,
+ &quot;bar_span&quot;: 0.86,
+ &quot;bar_z&quot;: 0.283333,
+ &quot;bob_radius&quot;: 0.016556,
+ &quot;camera_azimuth_degrees&quot;: -90.0,
+ &quot;camera_elevation_ratio&quot;: 0.4,
+ &quot;first_length&quot;: 0.233333,
+ &quot;gravity&quot;: 9.81,
+ &quot;length_ratio&quot;: 0.954182491820685,
+ &quot;lengths&quot;: [
+  0.233333,
+  0.22264226336399592,
+  0.21244134964125483,
+  0.20270781636644195,
+  0.19342024933206142,
+  0.18455821547624457,
+  0.17610221792910194,
+  0.1680336531187398,
+  0.16033476984257178,
+  0.15298863021388115,
+  0.14597907239771446
+ ],
+ &quot;model&quot;: &quot;Analytic small-angle pendulum model, authored per frame.  Each pendulum in the row has a length L_k = L0 q^k and is released from rest at the same angle, so its motion is x_k(t) = L_k sin(omega_k t) with omega_k = sqrt(g / L_k) in the small-angle limit; the release angle is kept inside that limit and the release is the single event that starts the motion.  In the factual branch every pendulum keeps its own length, so the phases omega_k t run at different rates and the row forms a travelling wave.  In the counterfactual branch the length-period relation is replaced by one common period, so all the pendulums swing with the same phase and the row never forms a wave.  The release angle is measured from the downward vertical and the pendulums are released towards the same side of the row.  The model is an authored small-angle solution, not a multibody simulation, and it does not claim to be one.&quot;,
+ &quot;pend_x&quot;: [
+  -0.36,
+  -0.288,
+  -0.21599999999999997,
+  -0.144,
+  -0.072,
+  0.0,
+  0.072,
+  0.144,
+  0.21599999999999997,
+  0.288,
+  0.36
+ ],
+ &quot;pendulum_count&quot;: 11,
+ &quot;post_radius&quot;: 0.01,
+ &quot;release_angle&quot;: 0.466667,
+ &quot;release_frame&quot;: 8,
+ &quot;release_time&quot;: 0.333333,
+ &quot;rod_radius&quot;: 0.0022,
+ &quot;solver_steps_per_frame&quot;: 1,
+ &quot;time_scale&quot;: 1.0,
+ &quot;view&quot;: 0,
+ &quot;wave_time&quot;: 3.666667
+}</pre></p>
+<h2>Rendered cases</h2><section><h3>Case 42</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v42-true" controls playsinline muted preload="metadata"><source src="media/42-true.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v42-counterfactual" controls playsinline muted preload="metadata" poster="poster-42.png"><source src="media/42-counterfactual.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v42-mask" controls playsinline muted preload="metadata"><source src="media/42-mask.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v42-mask_overlay" controls playsinline muted preload="metadata"><source src="media/42-mask_overlay.mp4" type="video/mp4"></video><small>seed 42</small></figure></div>
+<p><strong>True prompt</strong><br>A row of pendulums of decreasing length hangs from a common horizontal bar, with a small ball on each one. All of them are released together from the same angle. Because the longer pendulums swing more slowly than the shorter ones, a wave travels along the row, and the balls are spread out along the swing in a moving pattern.</p>
+<p><strong>Counterfactual prompt</strong><br>A row of pendulums of decreasing length hangs from a common horizontal bar, with a small ball on each one. All of them are released together from the same angle. Every pendulum swings with the same period, so all the balls stay together and swing in unison, and no wave travels along the row.</p>
+<p class="small">decoded audit: first changed frame 9, mask start 9,
+evidence frame 20, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section><section><h3>Case 98</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v98-true" controls playsinline muted preload="metadata"><source src="media/98-true.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v98-counterfactual" controls playsinline muted preload="metadata" poster="poster-98.png"><source src="media/98-counterfactual.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v98-mask" controls playsinline muted preload="metadata"><source src="media/98-mask.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v98-mask_overlay" controls playsinline muted preload="metadata"><source src="media/98-mask_overlay.mp4" type="video/mp4"></video><small>seed 98</small></figure></div>
+<p><strong>True prompt</strong><br>A row of pendulums of decreasing length hangs from a common horizontal bar, with a small ball on each one. All of them are released together from the same angle. Because the longer pendulums swing more slowly than the shorter ones, a wave travels along the row, and the balls are spread out along the swing in a moving pattern.</p>
+<p><strong>Counterfactual prompt</strong><br>A row of pendulums of decreasing length hangs from a common horizontal bar, with a small ball on each one. All of them are released together from the same angle. Every pendulum swings with the same period, so all the balls stay together and swing in unison, and no wave travels along the row.</p>
+<p class="small">decoded audit: first changed frame 14, mask start 14,
+evidence frame 29, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section>
+<h2>Case summary</h2><table><tr><th>seed</th><th>operator</th><th>first changed</th><th>mask start</th><th>evidence</th><th>decoded audit</th><th>output</th></tr><tr><td>42</td><td>length_period_relation_flattened</td><td>9</td><td>9</td><td>20</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr><tr><td>98</td><td>length_period_relation_flattened</td><td>14</td><td>14</td><td>29</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr></table>
+<h2>Contract</h2>
+<p>True and Counterfactual are produced by one declared operator applied once at a single intervention frame.
+Every decoded frame before the intervention frame is exactly equal. The mask contains only the visible pixels of the
+violating object and never a shadow. Physical time equals video time; the solver steps per recorded frame and the
+internal time step are recorded in each case metadata.</p></main></html>
