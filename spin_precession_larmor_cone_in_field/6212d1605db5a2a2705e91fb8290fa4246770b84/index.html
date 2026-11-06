@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>spin_precession_larmor_cone_in_field</title><style>body{font:16px/1.65 system-ui,-apple-system,sans-serif;color:#173045;background:#f3f5f7;margin:0}
+main{max-width:1180px;margin:auto;padding:26px}h1{font-size:26px;overflow-wrap:anywhere}h2{margin-top:34px}
+a{color:#0757b4}code{overflow-wrap:anywhere}section,article{background:#fff;border:1px solid #d6dde4;padding:18px;border-radius:12px;margin:18px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.vid{margin:0;min-width:0}video{width:100%;aspect-ratio:1;background:#000}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #ccd5df;padding:7px;text-align:left}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f4;padding:12px;border-radius:8px}
+.small{color:#5a6b7b;font-size:13px}.pill{display:inline-block;background:#e7f0ff;border-radius:999px;padding:2px 10px;margin:2px;font-size:13px}</style><main><h1>spin_precession_larmor_cone_in_field</h1>
+<p><span class="pill">generator spin_precession_larmor_cone_in_field</span><span class="pill">head 6212d1605db5a2a2705e91fb8290fa4246770b84</span>
+<span class="pill">native 2048x2048 · 24 fps · 120 frames · 5 s · H.264</span><span class="pill">violating-object-only mask</span></p>
+<p><strong>Pull request</strong>: <a href="https://github.com/hipo-dev/counterfactual-data/pull/840">https://github.com/hipo-dev/counterfactual-data/pull/840</a> · <strong>commit</strong>: <code>6212d1605db5a2a2705e91fb8290fa4246770b84</code></p>
+<p><strong>Operator</strong>: <code>magnetic_torque_on_spin_removed</code> · <strong>scene params</strong>:
+<pre>{
+ &quot;appearance&quot;: 0,
+ &quot;ball_radius&quot;: 0.018222,
+ &quot;camera_azimuth_degrees&quot;: -46.0,
+ &quot;camera_elevation_ratio&quot;: 0.58,
+ &quot;gravity&quot;: 9.81,
+ &quot;magnet_height&quot;: 0.016,
+ &quot;magnet_size&quot;: 0.115,
+ &quot;model&quot;: &quot;Analytic magnetic-moment model, authored per frame.  The ball is held at its centre by an ideal ball joint, so it can turn about any axis and its weight produces no torque about its own centre.  Its magnetisation mu is along the needle, which is horizontal, and the field B at the ball points up out of the magnet&#x27;s north pole face, so the field is vertical.  The magnetic torque on the spin is mu x B, which is horizontal and perpendicular to the needle, and it turns the spin&#x27;s angular momentum about the vertical at the rate Omega = mu B / L; the needle therefore precesses about the field direction and traces a horizontal circle.  The ball also spins quickly about its own needle axis, which the bright tip on the needle shows.  In the factual branch the magnetic torque is present and the needle precesses; in the counterfactual branch the torque is removed, so the needle keeps its direction and only the spin continues.  The two branches are identical until the ball is spun up, which is the single declared event.  The model is an authored reduced model of the precession of a magnetic moment in a uniform field; it is not a rigid-body or field solver result.&quot;,
+ &quot;needle_half&quot;: 0.0203335,
+ &quot;needle_length&quot;: 0.040667,
+ &quot;pole_height&quot;: 0.077222,
+ &quot;post_radius&quot;: 0.006,
+ &quot;precession_rate&quot;: 1.033333,
+ &quot;socket_radius&quot;: 0.022230839999999998,
+ &quot;solver_steps_per_frame&quot;: 1,
+ &quot;spin_rate&quot;: 5.555556,
+ &quot;spinup_frame&quot;: 9,
+ &quot;spinup_time&quot;: 0.366667,
+ &quot;time_scale&quot;: 1.0,
+ &quot;tip_radius&quot;: 0.005466599999999999,
+ &quot;view&quot;: 0
+}</pre></p>
+<h2>Rendered cases</h2><section><h3>Case 42</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v42-true" controls playsinline muted preload="metadata"><source src="media/42-true.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v42-counterfactual" controls playsinline muted preload="metadata" poster="poster-42.png"><source src="media/42-counterfactual.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v42-mask" controls playsinline muted preload="metadata"><source src="media/42-mask.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v42-mask_overlay" controls playsinline muted preload="metadata"><source src="media/42-mask_overlay.mp4" type="video/mp4"></video><small>seed 42</small></figure></div>
+<p><strong>True prompt</strong><br>A small magnetised ball rests in a socket above the flat red north pole face of a large magnet. The ball carries a thin needle with a bright tip, and the needle is spinning about its own axis while it lies across the magnet. The needle&#x27;s direction turns steadily about the vertical, so the bright tip travels round in a horizontal circle above the magnet.</p>
+<p><strong>Counterfactual prompt</strong><br>A small magnetised ball rests in a socket above the flat red north pole face of a large magnet. The ball carries a thin needle with a bright tip, and the needle is spinning about its own axis while it lies across the magnet. The magnet does not turn the needle at all, so the needle keeps the same direction and the bright tip only spins on the spot.</p>
+<p class="small">decoded audit: first changed frame 10, mask start 10,
+evidence frame 15, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section><section><h3>Case 98</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v98-true" controls playsinline muted preload="metadata"><source src="media/98-true.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v98-counterfactual" controls playsinline muted preload="metadata" poster="poster-98.png"><source src="media/98-counterfactual.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v98-mask" controls playsinline muted preload="metadata"><source src="media/98-mask.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v98-mask_overlay" controls playsinline muted preload="metadata"><source src="media/98-mask_overlay.mp4" type="video/mp4"></video><small>seed 98</small></figure></div>
+<p><strong>True prompt</strong><br>A small magnetised ball rests in a socket above the flat red north pole face of a large magnet. The ball carries a thin needle with a bright tip, and the needle is spinning about its own axis while it lies across the magnet. The needle&#x27;s direction turns steadily about the vertical, so the bright tip travels round in a horizontal circle above the magnet.</p>
+<p><strong>Counterfactual prompt</strong><br>A small magnetised ball rests in a socket above the flat red north pole face of a large magnet. The ball carries a thin needle with a bright tip, and the needle is spinning about its own axis while it lies across the magnet. The magnet does not turn the needle at all, so the needle keeps the same direction and the bright tip only spins on the spot.</p>
+<p class="small">decoded audit: first changed frame 16, mask start 16,
+evidence frame 27, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section>
+<h2>Case summary</h2><table><tr><th>seed</th><th>operator</th><th>first changed</th><th>mask start</th><th>evidence</th><th>decoded audit</th><th>output</th></tr><tr><td>42</td><td>magnetic_torque_on_spin_removed</td><td>10</td><td>10</td><td>15</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr><tr><td>98</td><td>magnetic_torque_on_spin_removed</td><td>16</td><td>16</td><td>27</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr></table>
+<h2>Contract</h2>
+<p>True and Counterfactual are produced by one declared operator applied once at a single intervention frame.
+Every decoded frame before the intervention frame is exactly equal. The mask contains only the visible pixels of the
+violating object and never a shadow. Physical time equals video time; the solver steps per recorded frame and the
+internal time step are recorded in each case metadata.</p></main></html>

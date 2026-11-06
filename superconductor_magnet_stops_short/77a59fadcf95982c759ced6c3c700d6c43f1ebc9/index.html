@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>superconductor_magnet_stops_short</title><style>body{font:16px/1.65 system-ui,-apple-system,sans-serif;color:#173045;background:#f3f5f7;margin:0}
+main{max-width:1180px;margin:auto;padding:26px}h1{font-size:26px;overflow-wrap:anywhere}h2{margin-top:34px}
+a{color:#0757b4}code{overflow-wrap:anywhere}section,article{background:#fff;border:1px solid #d6dde4;padding:18px;border-radius:12px;margin:18px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.vid{margin:0;min-width:0}video{width:100%;aspect-ratio:1;background:#000}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #ccd5df;padding:7px;text-align:left}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f4;padding:12px;border-radius:8px}
+.small{color:#5a6b7b;font-size:13px}.pill{display:inline-block;background:#e7f0ff;border-radius:999px;padding:2px 10px;margin:2px;font-size:13px}</style><main><h1>superconductor_magnet_stops_short</h1>
+<p><span class="pill">generator superconductor_magnet_stops_short</span><span class="pill">head 77a59fadcf95982c759ced6c3c700d6c43f1ebc9</span>
+<span class="pill">native 2048x2048 · 24 fps · 120 frames · 5 s · H.264</span><span class="pill">violating-object-only mask</span></p>
+<p><strong>Pull request</strong>: <a href="https://github.com/hipo-dev/counterfactual-data/pull/837">https://github.com/hipo-dev/counterfactual-data/pull/837</a> · <strong>commit</strong>: <code>77a59fadcf95982c759ced6c3c700d6c43f1ebc9</code></p>
+<p><strong>Operator</strong>: <code>meissner_repulsion_removed</code> · <strong>scene params</strong>:
+<pre>{
+ &quot;appearance&quot;: 0,
+ &quot;camera_azimuth_degrees&quot;: -145.0,
+ &quot;camera_elevation_ratio&quot;: 0.52,
+ &quot;entry_speed&quot;: 0.106667,
+ &quot;gravity&quot;: 9.81,
+ &quot;intervention_frame&quot;: 20,
+ &quot;magnet_height&quot;: 0.018,
+ &quot;magnet_length&quot;: 0.067778,
+ &quot;magnet_mass&quot;: 0.025556,
+ &quot;magnet_moment&quot;: 0.933333,
+ &quot;magnet_width&quot;: 0.016,
+ &quot;model&quot;: &quot;Reduced one-dimensional magnet model, authored per frame.  The bar magnet of mass M and magnetic moment m lies on a frictionless rail with its moment across the rail, so the moment is parallel to the flat face of the superconducting plate at the end of the rail.  A superconductor expels magnetic flux, so the field in front of its face is that of the mirror image of the magnet with its moment reversed; two antiparallel dipoles side by side repel, and the force falls off as the inverse fourth power of the gap d.  The repulsion is modelled as F = A / (d + d_soft)^4, where d_soft softens the law at the smallest gaps, and it is exactly zero outside a declared reach d_far so that the two branches are identical until the magnet enters the plate&#x27;s field region.  The magnet slides without friction along the rail and is stopped by the plate when it touches it.  In the factual branch the repulsion is present and is strong enough to reverse the magnet before it reaches the plate; in the counterfactual branch the term is removed, so the magnet slides on and rests against the plate.  The moment scale and the coupling constant are teaching values chosen so that the interaction is visible at tabletop size: the generator claims the Meissner expulsion, the image-dipole repulsion of a magnet parallel to the face, the inverse-fourth-power falloff and the reversal, and not a calibrated magnet or a field solver result.&quot;,
+ &quot;plate_height&quot;: 0.09,
+ &quot;plate_reach&quot;: 0.162222,
+ &quot;plate_thickness&quot;: 0.014,
+ &quot;plate_x&quot;: 0.1,
+ &quot;rail_height&quot;: 0.01,
+ &quot;soft_length&quot;: 0.018,
+ &quot;solver_steps_per_frame&quot;: 120,
+ &quot;start_gap&quot;: 0.252222,
+ &quot;start_x&quot;: -0.186111,
+ &quot;time_scale&quot;: 1.0,
+ &quot;view&quot;: 0
+}</pre></p>
+<h2>Rendered cases</h2><section><h3>Case 42</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v42-true" controls playsinline muted preload="metadata"><source src="media/42-true.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v42-counterfactual" controls playsinline muted preload="metadata" poster="poster-42.png"><source src="media/42-counterfactual.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v42-mask" controls playsinline muted preload="metadata"><source src="media/42-mask.mp4" type="video/mp4"></video><small>seed 42</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v42-mask_overlay" controls playsinline muted preload="metadata"><source src="media/42-mask_overlay.mp4" type="video/mp4"></video><small>seed 42</small></figure></div>
+<p><strong>True prompt</strong><br>A small bar magnet, red at one end and blue at the other, lies on a smooth metal rail and slides toward a tall dark plate that stands upright at the end of the rail. The plate is a superconductor, so it pushes the magnet away: the magnet slows down while it is still short of the plate, turns back, and slides away from the plate again.</p>
+<p><strong>Counterfactual prompt</strong><br>A small bar magnet, red at one end and blue at the other, lies on a smooth metal rail and slides toward a tall dark plate that stands upright at the end of the rail. The plate does not push the magnet away at all, so the magnet keeps its speed, slides the whole way and comes to rest touching the plate.</p>
+<p class="small">decoded audit: first changed frame 21, mask start 21,
+evidence frame 38, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section><section><h3>Case 98</h3><div class="grid"><figure class="vid"><figcaption><strong>True</strong></figcaption><video id="v98-true" controls playsinline muted preload="metadata"><source src="media/98-true.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Counterfactual</strong></figcaption><video id="v98-counterfactual" controls playsinline muted preload="metadata" poster="poster-98.png"><source src="media/98-counterfactual.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Mask</strong></figcaption><video id="v98-mask" controls playsinline muted preload="metadata"><source src="media/98-mask.mp4" type="video/mp4"></video><small>seed 98</small></figure><figure class="vid"><figcaption><strong>Overlay</strong></figcaption><video id="v98-mask_overlay" controls playsinline muted preload="metadata"><source src="media/98-mask_overlay.mp4" type="video/mp4"></video><small>seed 98</small></figure></div>
+<p><strong>True prompt</strong><br>A small bar magnet, red at one end and blue at the other, lies on a smooth metal rail and slides toward a tall dark plate that stands upright at the end of the rail. The plate is a superconductor, so it pushes the magnet away: the magnet slows down while it is still short of the plate, turns back, and slides away from the plate again.</p>
+<p><strong>Counterfactual prompt</strong><br>A small bar magnet, red at one end and blue at the other, lies on a smooth metal rail and slides toward a tall dark plate that stands upright at the end of the rail. The plate does not push the magnet away at all, so the magnet keeps its speed, slides the whole way and comes to rest touching the plate.</p>
+<p class="small">decoded audit: first changed frame 16, mask start 16,
+evidence frame 31, exact prefix True, strict binary mask True,
+overlay matches counterfactual outside the mask True.</p></section>
+<h2>Case summary</h2><table><tr><th>seed</th><th>operator</th><th>first changed</th><th>mask start</th><th>evidence</th><th>decoded audit</th><th>output</th></tr><tr><td>42</td><td>meissner_repulsion_removed</td><td>21</td><td>21</td><td>38</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr><tr><td>98</td><td>meissner_repulsion_removed</td><td>16</td><td>16</td><td>31</td><td>PASS</td><td>2048x2048 / 24fps / 120f</td></tr></table>
+<h2>Contract</h2>
+<p>True and Counterfactual are produced by one declared operator applied once at a single intervention frame.
+Every decoded frame before the intervention frame is exactly equal. The mask contains only the visible pixels of the
+violating object and never a shadow. Physical time equals video time; the solver steps per recorded frame and the
+internal time step are recorded in each case metadata.</p></main></html>
